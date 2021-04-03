@@ -16,11 +16,10 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "heroku-postbuild": "webpack --config src/webpack.prod.js",
+    "heroku-postbuild": "webpack --config webpack.prod.js",
     "postinstall": "tsc",
-    "build": "rm -rf dist && tsc",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
-    "deploy": "git add . && git commit -m Heroku && git push heroku master",
+    "deploy": "tsc && git add . && git commit -m Heroku && git push heroku master",
     "commit": "git add . && git commit -m github && git push origin master"
   },
   "devDependencies": {
