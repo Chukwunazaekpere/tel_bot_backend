@@ -7,7 +7,7 @@ const express_1 = require("express");
 const controllers_1 = __importDefault(require("../controllers"));
 const router = express_1.Router();
 router.post("/deposit", controllers_1.default.depositController);
-router.get("/balance", controllers_1.default.);
+router.get("/balance", controllers_1.default.balanceController);
 router.post("/withdrawal", controllers_1.default.withdrawalController);
 router.post("/invest", controllers_1.default.reinvestController);
 exports.default = router;
