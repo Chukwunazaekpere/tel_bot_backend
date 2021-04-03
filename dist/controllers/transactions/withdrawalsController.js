@@ -18,7 +18,7 @@ const withdrawalController = (req, res) => __awaiter(void 0, void 0, void 0, fun
     const data = req.body;
     const newWithdrawal = new Withdrawal(Object.assign({}, data));
     try {
-        const modelResponse = yield newWithdrawal.decreaseBalance();
+        const modelResponse = newWithdrawal.decreaseBalance();
         if (typeof (modelResponse) === "string") {
             const message = `${modelResponse}`;
             throw message;

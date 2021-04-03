@@ -11,7 +11,7 @@ const withdrawalController = async (req: Request, res: Response): Promise<Respon
         ...data
     })
     try {
-        const modelResponse = await newWithdrawal.decreaseBalance();
+        const modelResponse = newWithdrawal.decreaseBalance();
         if(typeof(modelResponse) === "string"){
             const message = `${modelResponse}`;
             throw message;

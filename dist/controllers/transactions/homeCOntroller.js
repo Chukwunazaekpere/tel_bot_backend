@@ -13,7 +13,7 @@ const homeController = (req, res) => __awaiter(void 0, void 0, void 0, function*
     return res.status(200).json({
         message: 'This is AmcorTraadingBot.',
         status: "Success",
-        data: null
+        data: ""
     });
 });
 exports.default = homeController;

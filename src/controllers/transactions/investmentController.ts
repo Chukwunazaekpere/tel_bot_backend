@@ -9,7 +9,7 @@ const investmentController = async (req: Request, res: Response): Promise<Respon
 
     const newInvestment = new Investments({
         ...data
-    })
+    });
     try {
         const modelResponse = await newInvestment.increaseInvestment();
         if(typeof(modelResponse) === "string"){
