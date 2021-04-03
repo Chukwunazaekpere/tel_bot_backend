@@ -8,8 +8,10 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
   },
-  node: {
-    fs: "empty",
+  resolve: {
+    fallback: {
+      fs: false
+    }
   },
   plugins: [
     new webpack.DefinePlugin({

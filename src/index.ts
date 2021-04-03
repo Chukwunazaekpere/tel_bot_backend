@@ -1,5 +1,25 @@
-import server from './server';
+import dotenv from 'dotenv';
+dotenv.config();
+
+
+import express, { Application } from 'express';
+const server: Application = express();
+
+
+//======================= imports ======================
 import dbConnect from './config/dbConnect';
+import routers from './routes';
+//======================================================
+
+// settings
+
+
+//middlewares
+server.use(express.json());
+
+
+// routes
+server.use('/api', routers);
 
 
 

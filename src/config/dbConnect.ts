@@ -1,13 +1,7 @@
+import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-// import dotenv from 'dotenv';
 
-// dotenv.config({ path: "./src/config/config.env"});
-
-// if (process.env.NODE_ENV == 'development'){
-//     require('dotenv').config({ silent: true });
-//     console.log("Env: ", process.env.NODE_ENV);
-// }
-console.log("Path: ", process.env);
+dotenv.config({ path: "./src/config/config.env"});
 
 const connectDb = async () => {
     console.log('\n\t Initiating DB connection...');
