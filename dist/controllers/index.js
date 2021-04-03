@@ -8,12 +8,12 @@ const registerController_1 = __importDefault(require("./authentication/registerC
 const usersAccountController_1 = __importDefault(require("./authentication/usersAccountController"));
 const homeController_1 = __importDefault(require("./transactions/homeController"));
 //====================== transactions inport ========================
-// import balanceController from './transactions/accountControllers';
+const balanceController_1 = __importDefault(require("./transactions/balanceController"));
 const depositController_1 = __importDefault(require("./transactions/depositController"));
 const withdrawalsController_1 = __importDefault(require("./transactions/withdrawalsController"));
 const investmentController_1 = __importDefault(require("./transactions/investmentController"));
 const controllers = {
-    // balanceController,
+    balanceController: balanceController_1.default,
     depositController: depositController_1.default,
     withdrawalController: withdrawalsController_1.default,
     reinvestController: investmentController_1.default,
