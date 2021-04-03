@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+
 import models from '../../models';
 const Users = models.Users;
 
