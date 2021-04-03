@@ -1,17 +1,19 @@
-import { resolve } from "path";
-import { DefinePlugin } from "webpack";
+const path = require("path");
+const webpack = require("webpack");
 
-export const entry = "./dist/index.js";
-export const mode = "production";
-export const output = {
+module.exports = {
+  entry: "./dist/index.js",
+  mode: "production",
+  output: {
     filename: "index.js",
-    path: resolve(__dirname, "dist"),
-};
-export const node = {
+    path: path.resolve(__dirname, "dist"),
+  },
+  node: {
     fs: "empty",
-};
-export const plugins = [
-    new DefinePlugin({
-        "process.env": {},
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {},
     }),
-];
+  ],
+};
