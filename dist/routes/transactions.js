@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const controllers_1 = __importDefault(require("../controllers"));
+const index_1 = __importDefault(require("../controllers/index"));
 const router = express_1.Router();
-router.post("/deposit", controllers_1.default.depositController);
-router.get("/balance", controllers_1.default.balanceController);
-router.post("/withdrawal", controllers_1.default.withdrawalController);
-router.post("/invest", controllers_1.default.reinvestController);
+router.post("/deposit", index_1.default.depositController);
+router.get("/balance", index_1.default.balanceController);
+router.post("/withdrawal", index_1.default.withdrawalController);
+router.post("/invest", index_1.default.reinvestController);
 exports.default = router;

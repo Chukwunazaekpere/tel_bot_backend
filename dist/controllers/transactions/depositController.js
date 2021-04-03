@@ -12,8 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const models_1 = __importDefault(require("../../models"));
-const Deposit = models_1.default.Deposits;
+const index_1 = __importDefault(require("../../models/index"));
+const Deposit = index_1.default.Deposits;
 const depositController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = req.body;
     const newDeposit = new Deposit(Object.assign({}, data));

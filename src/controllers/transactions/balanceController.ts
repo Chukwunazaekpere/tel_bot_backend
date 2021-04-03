@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import models from '../../models';
+import models from '../../models/index';
 const Account = models.Account;
 const Users = models.Users;
 

@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const models_1 = __importDefault(require("../../models"));
-const Account = models_1.default.Account;
-const Users = models_1.default.Users;
+const index_1 = __importDefault(require("../../models/index"));
+const Account = index_1.default.Account;
+const Users = index_1.default.Users;
 const balanceController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username } = req.body;
     try {
