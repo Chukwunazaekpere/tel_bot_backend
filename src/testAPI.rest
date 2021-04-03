@@ -35,3 +35,11 @@ Content-Type: application/json
     "username": "Emmanuel",
     "amount": "5000"
 }
+
+###
+GET http://localhost:7000/api/transactions/balance
+Content-Type: application/json
+
+{
+    "username": "Emmanuel"
+}

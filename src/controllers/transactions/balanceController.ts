@@ -19,7 +19,7 @@ const balanceController = async (req: Request, res: Response): Promise<Response>
         return res.status(200).json({
             message: 'Account Balance',
             status: "Success",
-            data: balance
+            data: `Your balance is: ${balance}.`
         })
     } catch (error) {
         return res.status(500).json({

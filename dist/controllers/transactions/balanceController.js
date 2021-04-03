@@ -29,7 +29,7 @@ const balanceController = (req, res) => __awaiter(void 0, void 0, void 0, functi
         return res.status(200).json({
             message: 'Account Balance',
             status: "Success",
-            data: balance
+            data: `Your balance is: ${balance}.`
         });
     }
     catch (error) {
