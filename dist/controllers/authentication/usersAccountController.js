@@ -17,14 +17,14 @@ const Account = models_1.default.Account;
 const usersAccountController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const users = yield Account.find();
-        res.status(200).json({
+        return res.status(200).json({
             message: 'All users.',
             status: 'Successful',
             data: users
         });
     }
     catch (error) {
-        res.status(400).json({
+        return res.status(400).json({
             message: `${error}`,
             status: 'Error',
             data: null

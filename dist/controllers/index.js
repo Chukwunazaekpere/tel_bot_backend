@@ -6,14 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //======================= authentication imports ====================
 const registerController_1 = __importDefault(require("./authentication/registerController"));
 const usersAccountController_1 = __importDefault(require("./authentication/usersAccountController"));
-const homeCOntroller_1 = __importDefault(require("./transactions/homeCOntroller"));
+const homeController_1 = __importDefault(require("./transactions/homeController"));
 //====================== transactions inport ========================
-const accountControllers_1 = __importDefault(require("./transactions/accountControllers"));
+// import balanceController from './transactions/accountControllers';
 const depositController_1 = __importDefault(require("./transactions/depositController"));
 const withdrawalsController_1 = __importDefault(require("./transactions/withdrawalsController"));
 const investmentController_1 = __importDefault(require("./transactions/investmentController"));
 const controllers = {
-    balanceController: accountControllers_1.default,
+    // balanceController,
     depositController: depositController_1.default,
     withdrawalController: withdrawalsController_1.default,
     reinvestController: investmentController_1.default,
@@ -21,6 +21,6 @@ const controllers = {
     registerController: registerController_1.default,
     usersController: usersAccountController_1.default,
     //======================
-    homeController: homeCOntroller_1.default
+    homeController: homeController_1.default
 };
 exports.default = controllers;

@@ -26,7 +26,7 @@ const registerController = (req, res) => __awaiter(void 0, void 0, void 0, funct
         }
         ;
         const savedUser = yield newUser.save();
-        res.status(201).json({
+        return res.status(201).json({
             message: 'New user registered.',
             status: 'Successful',
             data: savedUser
@@ -34,7 +34,7 @@ const registerController = (req, res) => __awaiter(void 0, void 0, void 0, funct
         savedUser.createAccount();
     }
     catch (error) {
-        res.status(400).json({
+        return res.status(400).json({
             message: `Failed to register user. ${error}`,
             status: 'Error',
             data: null

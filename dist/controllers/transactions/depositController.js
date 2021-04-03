@@ -24,14 +24,14 @@ const depositController = (req, res) => __awaiter(void 0, void 0, void 0, functi
             throw message;
         }
         const saveDeposit = yield newDeposit.save();
-        res.status(201).json({
+        return res.status(201).json({
             message: 'Deposit was successful',
             status: "Success",
             data: saveDeposit
         });
     }
     catch (error) {
-        res.status(400).json({
+        return res.status(400).json({
             message: `Deposit was unsuccessful.`,
             status: "Error",
             data: `${error}`

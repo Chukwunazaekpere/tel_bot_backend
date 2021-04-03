@@ -4,16 +4,16 @@ import registerController from './authentication/registerController';
 import usersController from './authentication/usersAccountController';
 
 
-import homeController from './transactions/homeCOntroller';
+import homeController from './transactions/homeController';
 //====================== transactions inport ========================
-import balanceController from './transactions/accountControllers';
+// import balanceController from './transactions/accountControllers';
 import depositController from './transactions/depositController';
 import withdrawalController from './transactions/withdrawalsController';
 import reinvestController from './transactions/investmentController';
 
 
 const controllers = {
-    balanceController,
+    // balanceController,
     depositController,
     withdrawalController,
     reinvestController,
