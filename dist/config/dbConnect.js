@@ -13,8 +13,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config({ path: "./src/config/config.env" });
+// import dotenv from 'dotenv';
+// dotenv.config({ path: "./src/config/config.env"});
+// if (process.env.NODE_ENV == 'development'){
+//     require('dotenv').config({ silent: true });
+//     console.log("Env: ", process.env.NODE_ENV);
+// }
+console.log("Path: ", process.env);
 const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log('\n\t Initiating DB connection...');
     try {
