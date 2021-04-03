@@ -3,7 +3,7 @@ import models from '../../models';
 const Users = models.Users;
 
 
-const registerConntroller = async (req:Request, res: Response) => {
+const registerController = async (req:Request, res: Response) => {
     const { username } = req.body;
     
     const newUser = new Users({
@@ -32,4 +32,4 @@ const registerConntroller = async (req:Request, res: Response) => {
 }
 
 
-export default registerConntroller;
+export default registerController;

@@ -4,6 +4,7 @@ import registerController from './authentication/registerController';
 import usersController from './authentication/usersAccountController';
 
 
+import homeController from './transactions/homeCOntroller';
 //====================== transactions inport ========================
 import balanceController from './transactions/accountControllers';
 import depositController from './transactions/depositController';
@@ -18,7 +19,9 @@ const controllers = {
     reinvestController,
     //========== auth =================
     registerController,
-    usersController
+    usersController,
+    //======================
+    homeController
 }
 
 export default controllers;

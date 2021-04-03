@@ -9,5 +9,4 @@ router.get("/balance", controllers.balanceController);
 router.post("/withdrawal", controllers.withdrawalController);
 router.post("/invest", controllers.reinvestController);
 
-
 export default router;

@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const models_1 = __importDefault(require("../../models"));
 const Users = models_1.default.Users;
-const registerConntroller = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const registerController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username } = req.body;
     const newUser = new Users({
         username
@@ -42,4 +42,4 @@ const registerConntroller = (req, res) => __awaiter(void 0, void 0, void 0, func
     }
     ;
 });
-exports.default = registerConntroller;
+exports.default = registerController;

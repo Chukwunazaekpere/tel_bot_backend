@@ -8,7 +8,9 @@ const appRouter = express_1.Router();
 //========================= imports =====================
 const transactions_1 = __importDefault(require("./transactions"));
 const authentication_1 = __importDefault(require("./authentication"));
+const controllers_1 = __importDefault(require("../controllers"));
 //=======================================================
 appRouter.use('/auth', authentication_1.default);
 appRouter.use('/transactions', transactions_1.default);
+appRouter.get("/", controllers_1.default.homeController);
 exports.default = appRouter;
