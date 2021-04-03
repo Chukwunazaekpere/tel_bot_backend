@@ -1,4 +1,4 @@
-GET http://localhost:7000/api/
+GET https://amcortradingbot.herokuapp.com/
 
 ###
 GET http://localhost:7000/api/auth/users-account
