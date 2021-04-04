@@ -19,7 +19,6 @@
     "start": "node dist/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
-    "build": "rm -rf dist tsc",
     "commit": "git add . && git commit -m github && git push origin master"
   },
   "devDependencies": {
