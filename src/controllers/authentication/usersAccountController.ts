@@ -21,5 +21,4 @@ const usersAccountController = async (req:Request, res: Response): Promise<Respo
     };
 }
 
-
 export default usersAccountController;
