@@ -25,9 +25,9 @@ const registerController = async (req:Request, res: Response): Promise<Response>
         });
     } catch (error) {
         return res.status(400).json({
-            message: `Failed to register user. ${error}`,
+            message: `Failed to register user.`,
             status: 'Error',
-            data: null
+            data: `${error}`
         });
     };
 }

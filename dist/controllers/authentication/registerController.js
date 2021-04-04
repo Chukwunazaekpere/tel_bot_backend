@@ -35,9 +35,9 @@ const registerController = (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
     catch (error) {
         return res.status(400).json({
-            message: `Failed to register user. ${error}`,
+            message: `Failed to register user.`,
             status: 'Error',
-            data: null
+            data: `${error}`
         });
     }
     ;

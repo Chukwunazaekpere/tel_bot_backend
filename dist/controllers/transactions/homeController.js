@@ -10,11 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const homeController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("Home");
     return res.status(200).json({
         message: 'This is AmcorTraadingBot.',
         status: "Success",
-        data: ""
     });
 });
 exports.default = homeController;
