@@ -23,7 +23,8 @@ userSchema.method("createAccount", async function() {
     const newAccount = new Account({
         user: `${this.id}`,
         balance: 0,
-        investment: 0
+        investment: 0,
+        availableWithdrawal: 0
     } as IAccountShema);
     const createdAccount = await newAccount.save();
     return createdAccount;

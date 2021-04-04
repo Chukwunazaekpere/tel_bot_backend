@@ -27,7 +27,8 @@ userSchema.method("createAccount", function () {
         const newAccount = new AccountModel_1.default({
             user: `${this.id}`,
             balance: 0,
-            investment: 0
+            investment: 0,
+            availableWithdrawal: 0
         });
         const createdAccount = yield newAccount.save();
         return createdAccount;

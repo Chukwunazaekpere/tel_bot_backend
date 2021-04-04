@@ -6,7 +6,7 @@ dotenv.config({ path: "./src/config/config.env"});
 const connectDb = async () => {
     console.log('\n\t Initiating DB connection...');
     try {
-        await mongoose.connect(process.env.MONGO_URI as string, {
+        await mongoose.connect(process.env.MONGO_URI_PROD as string, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true
