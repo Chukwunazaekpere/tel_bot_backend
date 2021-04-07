@@ -12,37 +12,38 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __importDefault(require("../../models/index"));
-const Users = index_1.default.Users;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config({ path: "../../src/config/config.env" });
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const registerController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username } = req.body;
-    const newUser = new Users({
-        username
-    });
+const index_1 = __importDefault(require("../../models/index"));
+const Admin = index_1.default.Admin;
+const adminLoginController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email, password } = req.body;
     try {
-        const userExists = yield Users.findOne({ username });
-        if (userExists !== null) {
-            throw ("You're a registered user.");
+        const adminExists = Admin.findOne({ email });
+        if (adminExists !== null) {
+            throw ("This email account has been registered with a user.");
         }
         ;
-        const savedUser = yield newUser.save();
-        savedUser.createAccount();
-        const userPayload = Object.assign({}, savedUser);
-        const accesstoken = jsonwebtoken_1.default.sign(userPayload, process.env.ACCESS_TOKEN);
+        const hashPassword = bcryptjs_1.default.hash(password, 9);
+        const newAdmin = new Admin(Object.assign(Object.assign({}, req.body), { password: hashPassword }));
+        const savedAdmin = newAdmin.save();
+        yield Promise.all([adminExists, hashPassword, savedAdmin]);
+        const accesstoken = jsonwebtoken_1.default.sign(savedAdmin, process.env.ACCESS_TOKEN);
         return res.status(201).json({
-            message: 'New user registered.',
+            message: 'New Admin registered.',
             status: 'Successful',
-            data: accesstoken
+            data: savedAdmin
         });
     }
     catch (error) {
-        return res.status(500).send({
-            message: `Failed to register user.`,
+        return res.status(500).json({
+            message: `Failed to register admin.`,
             status: 'Error',
             data: `${error}`
         });
     }
     ;
 });
-exports.default = registerController;
+exports.default = adminLoginController;

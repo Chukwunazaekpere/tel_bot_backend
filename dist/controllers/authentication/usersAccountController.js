@@ -24,7 +24,7 @@ const usersAccountController = (req, res) => __awaiter(void 0, void 0, void 0, f
         });
     }
     catch (error) {
-        return res.status(400).json({
+        return res.status(500).json({
             message: `${error}`,
             status: 'Error',
             data: null

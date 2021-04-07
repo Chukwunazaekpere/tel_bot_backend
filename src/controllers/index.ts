@@ -2,6 +2,7 @@
 //======================= authentication imports ====================
 import registerController from './authentication/registerController';
 import usersController from './authentication/usersAccountController';
+import adminRegisterController from './authentication/adminRegisterController';
 
 
 import homeController from './transactions/homeController';
@@ -20,6 +21,7 @@ const controllers = {
     //========== auth =================
     registerController,
     usersController,
+    adminRegisterController,
     //======================
     homeController
 }

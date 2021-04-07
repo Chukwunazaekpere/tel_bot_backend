@@ -8,7 +8,7 @@ POST http://localhost:7000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "Kingsley"
+    "username": "emmanuella"
 }
 
 ###
@@ -16,7 +16,7 @@ POST http://localhost:7000/api/transactions/deposit
 Content-Type: application/json
 
 {
-    "username": "Emmanuel",
+    "username": "emmanuella",
     "amount": "5000"
 }
 ###
@@ -42,4 +42,16 @@ Content-Type: application/json
 
 {
     "username": "Emmanuel"
+}
+
+###
+POST http://localhost:7000/api/auth/register-admin
+Content-Type: application/json
+
+{
+    "firstname": "Emmanuel",
+    "lastname": "Obioma",
+    "phone": "081635437035",
+    "password": "urbskv ",
+    "email": "emmanuelchinazfad5777@gmsil.com"
 }

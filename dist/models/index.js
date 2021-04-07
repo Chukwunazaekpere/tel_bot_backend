@@ -9,11 +9,13 @@ const DepositModel_1 = __importDefault(require("./trannsactions/DepositModel"));
 const InvestModel_1 = __importDefault(require("./trannsactions/InvestModel"));
 //=============== auth model =====================
 const Users_1 = __importDefault(require("./authentication/Users"));
+const Admin_1 = __importDefault(require("./authentication/Admin"));
 const models = {
     Account: AccountModel_1.default,
     Withdrawals: WithdrawalModel_1.default,
     Deposits: DepositModel_1.default,
     Users: Users_1.default,
+    Admin: Admin_1.default,
     Investments: InvestModel_1.default
 };
 exports.default = models;

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //======================= authentication imports ====================
 const registerController_1 = __importDefault(require("./authentication/registerController"));
 const usersAccountController_1 = __importDefault(require("./authentication/usersAccountController"));
+const adminRegisterController_1 = __importDefault(require("./authentication/adminRegisterController"));
 const homeController_1 = __importDefault(require("./transactions/homeController"));
 //====================== transactions inport ========================
 const balanceController_1 = __importDefault(require("./transactions/balanceController"));
@@ -20,6 +21,7 @@ const controllers = {
     //========== auth =================
     registerController: registerController_1.default,
     usersController: usersAccountController_1.default,
+    adminRegisterController: adminRegisterController_1.default,
     //======================
     homeController: homeController_1.default
 };

@@ -5,6 +5,8 @@ import Investments from './trannsactions/InvestModel';
 
 //=============== auth model =====================
 import Users from './authentication/Users';
+import Admin from './authentication/Admin';
+
 
 
 const models = {
@@ -12,6 +14,7 @@ const models = {
     Withdrawals,
     Deposits,
     Users,
+    Admin,
     Investments
 }
 

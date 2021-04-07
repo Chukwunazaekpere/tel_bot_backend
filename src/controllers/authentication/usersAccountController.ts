@@ -13,7 +13,7 @@ const usersAccountController = async (req:Request, res: Response): Promise<Respo
             data: users
         });
     } catch (error) {
-        return res.status(400).json({
+        return res.status(500).json({
             message: `${error}`,
             status: 'Error',
             data: null
