@@ -9,7 +9,7 @@ const withdrawalController = async (req: Request, res: Response): Promise<Respon
 
     const newWithdrawal = new Withdrawal({
         ...data
-    })
+    });
     try {
         const modelResponse = newWithdrawal.decreaseBalance();
         if(typeof(modelResponse) === "string"){

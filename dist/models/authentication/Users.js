@@ -19,10 +19,20 @@ const userSchema = new mongoose_1.default.Schema({
         type: String,
         required: true,
         unique: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
         lowercase: true
     },
+    walletAddress: {
+        type: String,
+        required: true,
+        unique: true,
+    },
 }, { timestamps: true, updateddAt: false });
-userSchema.method("createAccount", function () {
+userSchema.methods.createAccount = function () {
     return __awaiter(this, void 0, void 0, function* () {
         const newAccount = new AccountModel_1.default({
             user: `${this.id}`,
@@ -33,6 +43,6 @@ userSchema.method("createAccount", function () {
         const createdAccount = yield newAccount.save();
         return createdAccount;
     });
-});
+};
 const Users = mongoose_1.default.model("Users", userSchema);
 exports.default = Users;

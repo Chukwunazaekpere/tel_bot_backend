@@ -9,10 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const homeController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.supportController = exports.teamController = void 0;
+const teamController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const message = "Hello there from the AmcorTrading Team.";
     return res.send({
-        message: 'This is AmcorTraadingBot; welcome.',
-        status: "Success",
+        message
     });
 });
-exports.default = homeController;
+exports.teamController = teamController;
+const supportController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const message = {
+        Email: "amcortradingbot@gmail.com",
+        Team: "@amcortradingsupport_team",
+        Assisst: "@Amcortrading_Assists"
+    };
+    return res.send(Object.assign({}, message));
+});
+exports.supportController = supportController;

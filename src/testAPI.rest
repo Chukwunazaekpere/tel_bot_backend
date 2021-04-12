@@ -1,4 +1,8 @@
-GET https://amcortradingbot.herokuapp.com/
+GET https://amcortradingbot.herokuapp.com/api
+
+###
+
+GET http://localhost:7000/api/
 
 ###
 GET http://localhost:7000/api/auth/users-account
@@ -53,5 +57,5 @@ Content-Type: application/json
     "lastname": "Obioma",
     "phone": "081635437035",
     "password": "urbskv ",
-    "email": "emmanuelchinazfad5777@gmsil.com"
+    "email": "emmanuelchinazfad5777@gmail.com"
 }

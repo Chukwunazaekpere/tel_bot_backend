@@ -1,5 +1,5 @@
 import mongoose, {Document, SchemaOptions} from 'mongoose';
-import Account, { IAccountModel } from './AccountModel';
+import Account, { IAccountCreation } from './AccountModel';
 import User from '../authentication/Users';
 
 
@@ -9,7 +9,7 @@ export interface IWithdrawalSchema extends Document {
     transactionId: string
 }
 
-export interface IWithdrawalModel extends IWithdrawalSchema, Document {
+export interface IWithdrawalCreation extends IWithdrawalSchema, Document {
     decreaseBalance(): number
 }
 
@@ -53,5 +53,5 @@ withdrawalSchema.methods.decreaseBalance = async function() {
 
 }
 
-const Withdrawals = mongoose.model<IWithdrawalModel>('Withdrawals', withdrawalSchema);
+const Withdrawals = mongoose.model<IWithdrawalCreation>('Withdrawals', withdrawalSchema);
 export default Withdrawals;

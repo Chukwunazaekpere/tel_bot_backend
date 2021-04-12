@@ -1,5 +1,5 @@
 import mongoose, {Document, Model, SchemaOptions} from 'mongoose';
-import Account, { IAccountModel } from './AccountModel';
+import Account, { IAccountCreation } from './AccountModel';
 import User from '../authentication/Users';
 
 
@@ -9,12 +9,8 @@ export interface IDepositSchema extends Document {
     transactionId: string
 }
 
-export interface IDepositQuery extends IDepositSchema, Document  {
-    increaseBalance(): Promise<IDepositQuery>
-}
-
-export interface IDepositModel extends Model<IDepositQuery> {
-    increaseBalance(): Promise<IDepositQuery>
+export interface IDepositCreation extends IDepositSchema, Document {
+    increaseBalance(): Promise<IDepositCreation>
 }
 
 
@@ -59,5 +55,5 @@ depositSchema.methods.increaseBalance = async function() {
 
 }
 
-const Deposits = mongoose.model<IDepositQuery, IDepositModel>('Deposits', depositSchema);
+const Deposits = mongoose.model<IDepositCreation>('Deposits', depositSchema);
 export default Deposits;

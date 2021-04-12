@@ -5,7 +5,7 @@ export interface IAdminSchema extends Document {
     username: string,
 }
 
-export interface IAdminModel extends IAdminSchema, Document {
+export interface IAdminCreation extends IAdminSchema, Document {
     createAccount(): object;
 }
 
@@ -38,5 +38,5 @@ const adminSchema = new mongoose.Schema<IAdminSchema>({
 
 
 
-const Admin = mongoose.model<IAdminModel>("Admin", adminSchema);
+const Admin = mongoose.model<IAdminCreation>("Admin", adminSchema);
 export default Admin;

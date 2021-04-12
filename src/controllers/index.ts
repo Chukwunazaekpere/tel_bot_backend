@@ -13,6 +13,8 @@ import withdrawalController from './transactions/withdrawalsController';
 import reinvestController from './transactions/investmentController';
 
 
+import { supportController, teamController} from './utilControllers';
+
 const controllers = {
     balanceController,
     depositController,
@@ -23,7 +25,10 @@ const controllers = {
     usersController,
     adminRegisterController,
     //======================
-    homeController
+    homeController,
+    //======================
+    supportController,
+    teamController
 }
 
 export default controllers;

@@ -1,5 +1,5 @@
 import mongoose, {Document, SchemaOptions} from 'mongoose';
-import Account, { IAccountModel } from './AccountModel';
+import Account, { IAccountCreation } from './AccountModel';
 import User from '../authentication/Users';
 
 
@@ -9,7 +9,7 @@ export interface IInvestmentSchema extends Document {
     transactionId: string
 }
 
-export interface IInvestmentModel extends IInvestmentSchema, Document {
+export interface IInvestmentCreation extends IInvestmentSchema, Document {
     increaseInvestment(): number
 }
 
@@ -62,5 +62,5 @@ investmentSchema.methods.increaseInvestment = async function() {
 
 }
 
-const Investments = mongoose.model<IInvestmentModel>('Investments', investmentSchema);
+const Investments = mongoose.model<IInvestmentCreation>('Investments', investmentSchema);
 export default Investments;

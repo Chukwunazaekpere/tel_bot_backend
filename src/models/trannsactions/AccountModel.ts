@@ -9,13 +9,10 @@ export interface IAccountShema extends Document {
     createdAt: number
 };
 
-export interface IAccountQuery extends IAccountShema, Document {
-    balance: number,  
-}
 
-export interface IAccountModel extends Model<IAccountShema, IAccountQuery>{
-    getBalance(): Promise<IAccountQuery>;
-    setBonus(): Promise<IAccountQuery>
+export interface IAccountCreation extends IAccountShema, Document{
+    getBalance(): Promise<IAccountShema>;
+    setBonus(): Promise<IAccountShema>
 }
 
 const accountSchema = new mongoose.Schema<IAccountShema>({
@@ -82,7 +79,7 @@ accountSchema.methods.getBalance = async function(){
     return this.balance;
 };
 
-const Account = mongoose.model<IAccountQuery>("Account", accountSchema);
+const Account = mongoose.model<IAccountCreation>("Account", accountSchema);
 export default Account;
 
 

@@ -18,7 +18,7 @@ dotenv_1.default.config({ path: "./src/config/config.env" });
 const connectDb = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log('\n\t Initiating DB connection...');
     try {
-        yield mongoose_1.default.connect(process.env.MONGO_URI, {
+        yield mongoose_1.default.connect(process.env.MONGO_URI_DEV, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true

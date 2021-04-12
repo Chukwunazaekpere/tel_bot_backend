@@ -13,6 +13,7 @@ const balanceController_1 = __importDefault(require("./transactions/balanceContr
 const depositController_1 = __importDefault(require("./transactions/depositController"));
 const withdrawalsController_1 = __importDefault(require("./transactions/withdrawalsController"));
 const investmentController_1 = __importDefault(require("./transactions/investmentController"));
+const utilControllers_1 = require("./utilControllers");
 const controllers = {
     balanceController: balanceController_1.default,
     depositController: depositController_1.default,
@@ -23,6 +24,9 @@ const controllers = {
     usersController: usersAccountController_1.default,
     adminRegisterController: adminRegisterController_1.default,
     //======================
-    homeController: homeController_1.default
+    homeController: homeController_1.default,
+    //======================
+    supportController: utilControllers_1.supportController,
+    teamController: utilControllers_1.teamController
 };
 exports.default = controllers;
