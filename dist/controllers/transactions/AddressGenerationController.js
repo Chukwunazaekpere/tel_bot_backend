@@ -27,14 +27,12 @@ const AddressGenerationController = (req, res) => __awaiter(void 0, void 0, void
             }
         });
         let { address, privateKey, publicKey, wif } = data.data.payload;
-        const generatedAddressDetails = yield GeneratedAddress_1.default.create({
+        let generatedAddressDetails = yield GeneratedAddress_1.default.create({
             privateKey,
             publicKey,
             address,
             wif
         });
-        console.log("\n\t Saved TX...", data.data.payload);
-        console.log("\n\t Saved TX...", generatedAddressDetails);
         return res.status(201).send({
             message: 'Please copy this address and click on the link to make deposit..',
             address: address,

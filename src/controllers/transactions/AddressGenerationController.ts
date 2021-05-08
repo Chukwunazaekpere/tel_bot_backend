@@ -16,7 +16,7 @@ interface PayloadType {
 const AddressGenerationController = async (req: Request, res: Response): Promise<Response> => {
     try {
         // generate address
-        const data: AxiosResponse<any> = await axios.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/address`, {data: {}}, {
+        const data: AxiosResponse<GenerateAddressInterface> = await axios.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/address`, {data: {}}, {
             // data: {},
             headers: {
                 "Content-Type": "application/json",
@@ -25,14 +25,12 @@ const AddressGenerationController = async (req: Request, res: Response): Promise
         });
         let { address, privateKey, publicKey, wif } = data.data.payload;
         
-        const generatedAddressDetails = await GenerateAddress.create({
+        let generatedAddressDetails = await GenerateAddress.create({
             privateKey,
             publicKey,
             address,
             wif
         });
-        console.log("\n\t Saved TX...", data.data.payload);
-        console.log("\n\t Saved TX...", generatedAddressDetails);
         
         return res.status(201).send({ 
             message: 'Please copy this address and click on the link to make deposit..',

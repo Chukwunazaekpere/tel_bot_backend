@@ -17,14 +17,13 @@ dotenv_1.default.config();
 const axios_1 = __importDefault(require("axios"));
 const index_1 = __importDefault(require("../../models/index"));
 const Deposit = index_1.default.Deposits;
-const NETWORK = "BITCOIN";
 const DepositController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // generate address
     try {
-        const data = yield axios_1.default.post(`${process.env.BASE_URL}/v1/bc/btc/${NETWORK}/txs/new`, {
+        const data = yield axios_1.default.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/txs/new`, {}, {
             headers: {
                 "Content-Type": "application/json",
-                "X-API-Key": process.env.COIN_IO_API_KEY
+                "X-API-Key": process.env.CRYPTO_APIS
             }
         });
         let generatedAddress = data.data.address;

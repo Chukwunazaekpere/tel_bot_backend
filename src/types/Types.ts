@@ -1,6 +1,11 @@
 export interface GenerateAddressInterface {
-    privateKey: string,
-    publicKey: string,
-    address: string,
-    wif: string,
+    // data: {
+        payload: {
+            privateKey: string,
+            publicKey: string,
+            address: string,
+            wif: string,
+        }
+    // }
+    
 }

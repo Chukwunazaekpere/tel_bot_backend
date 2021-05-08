@@ -69,7 +69,7 @@ GET http://localhost:7000/api/transactions/generate-address
 
 ###
 
-GET https://amcortradingbot.herokuapp.com/api/transactions/generate-address
+GET http://localhost:7000/api/transactions/generate-address
 
 
 

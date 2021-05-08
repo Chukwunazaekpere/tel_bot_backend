@@ -15,17 +15,16 @@ interface GenerateAddress {
     wif: string,
 }
 
-const NETWORK = "BITCOIN";
 
 
 const DepositController = async (req: Request, res: Response): Promise<Response> => {
     
     // generate address
     try {
-        const data: AxiosResponse<GenerateAddress> = await axios.post(`${process.env.BASE_URL}/v1/bc/btc/${NETWORK}/txs/new`, {
+        const data: AxiosResponse<GenerateAddress> = await axios.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/txs/new`, {}, {
             headers: {
                 "Content-Type": "application/json",
-                "X-API-Key": process.env.COIN_IO_API_KEY 
+                "X-API-Key": process.env.CRYPTO_APIS
             }
         });
         let generatedAddress = data.data.address;
