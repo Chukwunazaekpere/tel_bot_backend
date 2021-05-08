@@ -19,20 +19,22 @@ const GeneratedAddress_1 = __importDefault(require("../../models/trannsactions/G
 const AddressGenerationController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // generate address
-        const data = yield axios_1.default.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/address`, {
+        const data = yield axios_1.default.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/address`, { data: {} }, {
+            // data: {},
             headers: {
                 "Content-Type": "application/json",
-                "X-API-Key": process.env.CRYPTOAPIS_KEY
+                "X-API-Key": process.env.CRYPTO_APIS
             }
         });
-        let { address, privateKey, publicKey, wif } = data.data;
+        let { address, privateKey, publicKey, wif } = data.data.payload;
         const generatedAddressDetails = GeneratedAddress_1.default.create({
             privateKey,
             publicKey,
             address,
             wif
         });
-        (yield generatedAddressDetails).save();
+        console.log("\n\t Saved TX...", data.data.payload);
+        console.log("\n\t Saved TX...", generatedAddressDetails);
         return res.status(201).send({
             message: 'Please copy this address and click on the link to make deposit..',
             address: address,

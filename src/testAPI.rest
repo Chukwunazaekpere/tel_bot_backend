@@ -71,6 +71,4 @@ X-API-Key: 861b1e252e3d996974fdc4f8e9b0e8b6ee7171f3
 
 
 ###
-GET https://amcortradingbot.herokuapp.com/api/transactions/generate-address
-Content-Type: application/json
-
+GET http://localhost:7000/api/transactions/generate-address
