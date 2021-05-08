@@ -3327,3 +3327,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zabo-sdk-js@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/zabo-sdk-js/-/zabo-sdk-js-1.1.0.tgz#411b4675d9f9764ceb92b24b95bf13d56f738b83"
+  integrity sha512-I6Fjx9xxhICguEfCMXoSdoSKKdn4AydisXjx7irESg04m9DjEJw4Y/YF30LbyqNwUgX5XzcBcRQmvhm7IaCymw==
+  dependencies:
+    axios "^0.21.1"
+    create-hmac "^1.1.7"

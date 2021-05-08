@@ -2,10 +2,10 @@ import { Router } from 'express';
 import controllers from '../controllers/index';
 import middlewares from '../middleware';
 
-const router: Router = Router();
+const authRouter: Router = Router();
 
-router.use('/register', middlewares.authMiddleware, controllers.registerController)
-router.use('/register-admin', controllers.adminRegisterController)
-router.use('/users-account', controllers.usersController)
+authRouter.use('/register', middlewares.authMiddleware, controllers.registerController)
+authRouter.use('/register-admin', controllers.adminRegisterController)
+authRouter.use('/users-account', controllers.usersController)
 
-export default router;
+export default authRouter;

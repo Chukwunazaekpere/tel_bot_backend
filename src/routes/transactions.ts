@@ -3,11 +3,12 @@ import controllers from '../controllers';
 import middlewares from '../middleware'; 
 
 
-const router: Router = Router();
+const transactionRouter: Router = Router();
 
-router.post("/deposit", controllers.depositController);
-router.get("/balance", controllers.balanceController);
-router.post("/withdrawal", controllers.withdrawalController);
-router.post("/invest", controllers.reinvestController);
+transactionRouter.post("/deposit", controllers.depositController);
+transactionRouter.get("/generate-address", controllers.addressGenerator);
+transactionRouter.get("/balance", controllers.balanceController);
+transactionRouter.post("/withdrawal", controllers.withdrawalController);
+transactionRouter.post("/invest", controllers.reinvestController);
 
-export default router;
+export default transactionRouter;

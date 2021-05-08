@@ -15,30 +15,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const axios_1 = __importDefault(require("axios"));
-const index_1 = __importDefault(require("../../models/index"));
-const Deposit = index_1.default.Deposits;
-const NETWORK = "BITCOIN";
-const DepositController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // generate address
+const GeneratedAddress_1 = __importDefault(require("../../models/trannsactions/GeneratedAddress"));
+const AddressGenerationController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const data = yield axios_1.default.post(`${process.env.BASE_URL}/v1/bc/btc/${NETWORK}/txs/new`, {
+        // generate address
+        const data = yield axios_1.default.post(`${process.env.BASE_URL}/v1/bc/btc/${process.env.NETWORK}/address`, {
             headers: {
                 "Content-Type": "application/json",
-                "X-API-Key": process.env.COIN_IO_API_KEY
+                "X-API-Key": process.env.CRYPTOAPIS_KEY
             }
         });
-        let generatedAddress = data.data.address;
-        return res.send({
-            message: 'Please pay to this address.',
-            address: generatedAddress
+        let { address, privateKey, publicKey, wif } = data.data;
+        const generatedAddressDetails = GeneratedAddress_1.default.create({
+            privateKey,
+            publicKey,
+            address,
+            wif
+        });
+        (yield generatedAddressDetails).save();
+        return res.status(201).send({
+            message: 'Please copy this address and click on the link to make deposit..',
+            address: address,
+            link: "https://localhost/api/transactions/deposit"
         });
     }
     catch (error) {
-        return res.status(400).json({
-            message: `Deposit was unsuccessful.`,
-            status: "Error",
-            data: `${error}`
+        return res.status(500).send({
+            error
         });
     }
 });
-exports.default = DepositController;
+exports.default = AddressGenerationController;

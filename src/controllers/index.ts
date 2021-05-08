@@ -8,18 +8,21 @@ import adminRegisterController from './authentication/adminRegisterController';
 import homeController from './transactions/homeController';
 //====================== transactions inport ========================
 import balanceController from './transactions/balanceController';
-import depositController from './transactions/depositController';
+import depositController from './transactions/AddressGenerationController';
 import withdrawalController from './transactions/withdrawalsController';
 import reinvestController from './transactions/investmentController';
 
 
 import { supportController, teamController} from './utilControllers';
 
+import addressGenerator from './transactions/AddressGenerationController';
+
 const controllers = {
     balanceController,
     depositController,
     withdrawalController,
     reinvestController,
+    addressGenerator,
     //========== auth =================
     registerController,
     usersController,

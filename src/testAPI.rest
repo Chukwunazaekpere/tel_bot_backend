@@ -5,6 +5,9 @@ GET https://amcortradingbot.herokuapp.com/api
 GET http://localhost:7000/api/
 
 ###
+GET http://localhost:7000/api/transactions/generate-addressc
+
+###
 GET http://localhost:7000/api/auth/users-account
 
 ###
@@ -59,3 +62,15 @@ Content-Type: application/json
     "password": "urbskv ",
     "email": "emmanuelchinazfad5777@gmail.com"
 }
+
+###
+
+POST https://api.cryptoapis.io/v1/bc/btc/mainnet/address
+Content-Type: application/json
+X-API-Key: 861b1e252e3d996974fdc4f8e9b0e8b6ee7171f3
+
+
+###
+GET https://amcortradingbot.herokuapp.com/api/transactions/generate-address
+Content-Type: application/json
+
