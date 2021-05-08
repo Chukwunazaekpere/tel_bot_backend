@@ -25,7 +25,7 @@ const AddressGenerationController = async (req: Request, res: Response): Promise
         });
         let { address, privateKey, publicKey, wif } = data.data.payload;
         
-        const generatedAddressDetails = GenerateAddress.create({
+        const generatedAddressDetails = await GenerateAddress.create({
             privateKey,
             publicKey,
             address,

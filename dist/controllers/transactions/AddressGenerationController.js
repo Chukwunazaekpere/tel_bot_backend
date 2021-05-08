@@ -27,7 +27,7 @@ const AddressGenerationController = (req, res) => __awaiter(void 0, void 0, void
             }
         });
         let { address, privateKey, publicKey, wif } = data.data.payload;
-        const generatedAddressDetails = GeneratedAddress_1.default.create({
+        const generatedAddressDetails = yield GeneratedAddress_1.default.create({
             privateKey,
             publicKey,
             address,
